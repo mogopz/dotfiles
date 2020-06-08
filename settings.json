@@ -1,0 +1,38 @@
+{
+  "editor.fontFamily": "Hack",
+  "editor.fontSize": 12,
+  "editor.quickSuggestionsDelay": 500,
+  "workbench.editor.tabSizing": "shrink",
+  "html.format.enable": true,
+  "html.format.preserveNewLines": true,
+  "files.trimTrailingWhitespace": false,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.fontWeight": "400",
+  "editor.cursorBlinking": "solid",
+  "editor.colorDecorators": false,
+  "editor.minimap.enabled": false,
+  "editor.minimap.showSlider": "always",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.autoIndent": "full",
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+  "workbench.editor.showTabs": true,
+  "window.zoomLevel": 0,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.rendererType": "dom",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "workbench.colorTheme": "Community Material Theme Ocean",
+}
