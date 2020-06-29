@@ -2,17 +2,20 @@
 Basic Mac dotfiles
 
 ## Manual installs outside of brew
-* 1Password
-* Amphetamine
-* Endel
-* Oh-my-zsh
-* Signal
-* Spaceship zsh theme
-* Spectacle
-* Todoist
-* TPM
-* Twitter
-* VS Code
+* [1Password](https://1password.com/)
+* [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+* [Signal](https://signal.org/en/)
+* [Spaceship ZSH theme](https://github.com/denysdovhan/spaceship-prompt)
+* [Notion](https://www.notion.so/)
+* [TPM](https://github.com/tmux-plugins/tpm)
+
+### App Store install
+```console
+mas install 937984704 # amphetamine
+mas install 1484348796 # endel
+mas install 585829637 # todoist
+mas install 1482454543 # twitter
+```
 
 ## VS Code extensions
 ```console
