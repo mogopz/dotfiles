@@ -22,6 +22,8 @@
   "window.zoomLevel": 0,
   "diffEditor.ignoreTrimWhitespace": false,
   "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "workbench.colorTheme": "Material Theme Ocean",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -34,5 +36,13 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "workbench.colorTheme": "Community Material Theme Ocean",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorCustomizations": {
+    "[Material Theme Ocean]": {}
+  }
 }
