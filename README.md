@@ -1,5 +1,5 @@
 # dotfiles
-Basic Mac dotfiles
+Mac dotfiles
 
 ## Manual installs outside of brew
 * [1Password](https://1password.com/)
@@ -13,7 +13,7 @@ Basic Mac dotfiles
 ```console
 mas install 937984704 # amphetamine
 mas install 1484348796 # endel
-mas install 585829637 # todoist
+mas install 904280696 # things
 mas install 1482454543 # twitter
 ```
 
