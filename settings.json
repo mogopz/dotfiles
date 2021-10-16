@@ -1,11 +1,7 @@
 {
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
-  "editor.quickSuggestionsDelay": 500,
-  "workbench.editor.tabSizing": "shrink",
-  "html.format.enable": true,
-  "html.format.preserveNewLines": true,
-  "files.trimTrailingWhitespace": false,
+  "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -13,17 +9,13 @@
   "editor.cursorBlinking": "solid",
   "editor.colorDecorators": false,
   "editor.minimap.enabled": false,
-  "editor.minimap.showSlider": "always",
   "workbench.startupEditor": "newUntitledFile",
   "editor.autoIndent": "full",
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
   "workbench.editor.showTabs": true,
-  "window.zoomLevel": 0,
   "diffEditor.ignoreTrimWhitespace": false,
-  "terminal.integrated.rendererType": "dom",
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "workbench.colorTheme": "Material Theme Ocean",
+  "prettier.printWidth": 120,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -39,10 +31,17 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "[jsonc]": {
+  "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorCustomizations": {
-    "[Material Theme Ocean]": {}
-  }
+  "go.toolsManagement.autoUpdate": true,
+  "files.associations": {
+    "*.tf": "terraform",
+    "*.tpl": "helm"
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.theme": "classic",
+  "redhat.telemetry.enabled": false
 }
