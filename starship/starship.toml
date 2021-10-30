@@ -1,0 +1,109 @@
+# set prompt ordering
+format = """
+$status\
+$battery\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$golang\
+$package\
+$nodejs\
+$python\
+$cmd_duration\
+$kubernetes\
+$line_break\
+$character"""
+
+[[battery.display]]
+threshold = 20
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+[kubernetes]
+disabled = false
+format = '| [☸️  $context( \($namespace\))]($style)'
+
+[package]
+display_private = true
+
+# disable unused plugins
+[aws]
+disabled = true
+
+[terraform]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[dart]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[erlang]
+disabled = true
+
+[golang]
+disabled = true
+
+[helm]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[nim]
+disabled = true
+
+[ocaml]
+disabled = true
+
+[php]
+disabled = true
+
+[purescript]
+disabled = true
+
+[swift]
+disabled = true
+
+[zig]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[openstack]
+disabled = true
+
+[crystal]
+disabled = true
+
+[lua]
+disabled = true
+
+[jobs]
+disabled = true
