@@ -45,6 +45,7 @@ brew "wget"
 brew "yarn"
 
 cask "1password"
+cask "alfred"
 cask "discord"
 cask "docker"
 cask "font-hack"
