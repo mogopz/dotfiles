@@ -1,15 +1,18 @@
 # 🤖 dotfiles
 
-### Manual installs
+## Manual installs
 
-- [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [TPM](https://github.com/tmux-plugins/tpm)
-- [iTerm2 One Dark theme](https://github.com/one-dark/iterm-one-dark-theme)
+* [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+* * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* * [starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
+* [spacevim](https://spacevim.org/quick-start-guide/#linux-and-macos)
+* [TPM](https://github.com/tmux-plugins/tpm)
 
-#### App Store
+## App Store
 
-Amphetamine, Things and Twitter
+Amphetamine, Meeter, Things and Twitter
 
 ```console
-➜ mas install 937984704 904280696 1482454543
+➜ mas install 937984704 1510445899 904280696 1482454543
 ```
