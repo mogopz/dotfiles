@@ -2,6 +2,8 @@
 
 There's no fancy install script yet!
 
+![Terminal screenshot](img/terminal.png)
+
 ## Manual installs
 
 * [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
