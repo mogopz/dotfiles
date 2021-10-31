@@ -1,13 +1,13 @@
 [user]
-	name = mogggggg
-	email = my@email.tld
+  name = mogggggg
+  email = my@email.tld
 [core]
-	excludesfile = /Users/mog/.gitignore
-	pager = diff-so-fancy | less
+  excludesfile = /Users/mog/.gitignore
+  pager = diff-so-fancy | less
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [pull]
-	rebase = false
+  rebase = false
 [push]
   default = upstream
   followTags = true
