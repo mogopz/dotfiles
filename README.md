@@ -1,5 +1,7 @@
 # 🤖 dotfiles
 
+There's no fancy install script yet!
+
 ## Manual installs
 
 * [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
