@@ -1,0 +1,9 @@
+# misc
+.DS_Store
+.git/
+node_modules/
+
+# terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate

@@ -1,0 +1,16 @@
+[user]
+	name = mogggggg
+	email = my@email.tld
+[core]
+	excludesfile = /Users/mog/.gitignore
+	pager = diff-so-fancy | less
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = false
+[push]
+  default = upstream
+  followTags = true
+[log]
+  follow = true
+  abbrevCommit = true

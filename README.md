@@ -6,7 +6,6 @@
 * * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * * [starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
-* [spacevim](https://spacevim.org/quick-start-guide/#linux-and-macos)
 * [TPM](https://github.com/tmux-plugins/tpm)
 
 ## App Store
