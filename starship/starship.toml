@@ -1,9 +1,5 @@
-# set prompt ordering
 format = """
-$status\
 $battery\
-$username\
-$hostname\
 $directory\
 $git_branch\
 $git_commit\
@@ -13,6 +9,7 @@ $golang\
 $package\
 $nodejs\
 $python\
+$terraform\
 $cmd_duration\
 $kubernetes\
 $line_break\
@@ -22,24 +19,28 @@ $character"""
 threshold = 20
 
 [character]
-success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
+success_symbol = "[➜](bold green)"
+
+[git_branch]
+symbol = "🌱 "
 
 [kubernetes]
 disabled = false
-format = '| [☸️  $context( \($namespace\))]($style)'
+format = '| [$symbol$context( \($namespace\))]($style)'
+symbol = "⛵ "
+
+[nodejs]
+symbol = "🤖 "
 
 [package]
 display_private = true
 
-# disable unused plugins
+# disable unused modules
 [aws]
 disabled = true
 
-[terraform]
-disabled = true
-
-[hg_branch]
+[crystal]
 disabled = true
 
 [dart]
@@ -57,13 +58,22 @@ disabled = true
 [erlang]
 disabled = true
 
-[golang]
+[gcloud]
 disabled = true
 
 [helm]
 disabled = true
 
+[hg_branch]
+disabled = true
+
+[hostname]
+disabled = true
+
 [java]
+disabled = true
+
+[jobs]
 disabled = true
 
 [julia]
@@ -72,10 +82,19 @@ disabled = true
 [kotlin]
 disabled = true
 
+[lua]
+disabled = true
+
+[memory_usage]
+disabled = true
+
 [nim]
 disabled = true
 
 [ocaml]
+disabled = true
+
+[openstack]
 disabled = true
 
 [php]
@@ -84,26 +103,17 @@ disabled = true
 [purescript]
 disabled = true
 
+[shell]
+disabled = true
+
 [swift]
 disabled = true
 
+[terraform]
+disabled = true
+
+[username]
+disabled = true
+
 [zig]
-disabled = true
-
-[memory_usage]
-disabled = true
-
-[gcloud]
-disabled = true
-
-[openstack]
-disabled = true
-
-[crystal]
-disabled = true
-
-[lua]
-disabled = true
-
-[jobs]
 disabled = true
