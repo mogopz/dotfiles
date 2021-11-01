@@ -10,6 +10,7 @@ There's no fancy install script yet!
   * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
+* [SpaceVim](https://github.com/SpaceVim/SpaceVim)
 * [TPM](https://github.com/tmux-plugins/tpm)
 
 ## App Store
