@@ -1,8 +1,9 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/mog/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 export AWS_PAGER=""
 export HISTCONTROL="ignoreboth"
+
+export EDITOR=nvim
 
 # coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -19,7 +20,6 @@ plugins=(
   git
   kubectl
   osx
-  spotify
   httpie
   tmux
   z
@@ -37,6 +37,7 @@ export NVM_DIR="$HOME/.nvm"
 alias k="kubectl"
 alias ls="exa"
 alias ll="ls -lah"
+alias vim="nvim"
 alias wget="wget --no-hsts"
 
 eval "$(starship init zsh)"

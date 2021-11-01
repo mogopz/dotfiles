@@ -2,7 +2,7 @@
   name = mogggggg
   email = my@email.tld
 [core]
-  excludesfile = /Users/mog/.gitignore
+  excludesfile = ~/.gitignore
   pager = diff-so-fancy | less
 [credential]
   helper = osxkeychain
