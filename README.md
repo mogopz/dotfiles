@@ -1,11 +1,9 @@
 # 🤖 dotfiles
 
-There's no fancy install script yet!
-
-![Terminal screenshot](img/terminal.png)
+No fancy install script yet!
 
 ## Manual installs
-
+There's a few tools that aren't available in Homebrew so they need to be manually installed:
 * [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
   * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -14,9 +12,12 @@ There's no fancy install script yet!
 * [TPM](https://github.com/tmux-plugins/tpm)
 
 ## App Store
-
-Amphetamine, Meeter, Things and Twitter
+These apps can be installed via the App Store or using [mas](https://github.com/mas-cli/mas).
 
 ```console
+# Amphetamine, Meeter, Things and Twitter
 ➜ mas install 937984704 1510445899 904280696 1482454543
 ```
+
+## Screenshot
+![Terminal screenshot](img/terminal.png)
