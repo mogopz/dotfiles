@@ -1,4 +1,4 @@
-cask_args appdir: "/Applications"
+cask_args appdir: "/Applications", require_sha: true
 
 tap "aws/tap"
 tap "buildkite/cli"
@@ -47,19 +47,21 @@ brew "pre-commit"
 brew "python@3.8"
 brew "semgrep"
 brew "shellcheck"
+brew "starship"
 brew "terraform-docs"
-brew "terragrunt"
+brew "terragrunt", args: ["ignore-dependencies"]
 brew "tfenv"
 brew "tflint"
 brew "tfsec"
 brew "tmux"
 brew "wget"
-brew "yarn"
+brew "yarn", args: ["ignore-dependencies"]
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 
 cask "1password"
 cask "alfred"
 cask "discord"
-cask "font-fira-code-nerd-font"
 cask "font-hack"
 cask "font-meslo-for-powerline"
 cask "gitify"
@@ -67,7 +69,6 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 cask "insomnia"
 cask "iterm2"
-cask "lepton"
 cask "logitech-options"
 cask "mongodb-compass"
 cask "notion"
@@ -78,3 +79,9 @@ cask "spotify"
 cask "visual-studio-code"
 cask "vlc"
 cask "zoom"
+
+# installed from app store
+mas "Amphetamine", id: 937984704
+mas "Meeter", id: 1510445899
+mas "Things 3", id: 904280696
+mas "Twitter", id: 1482454543
