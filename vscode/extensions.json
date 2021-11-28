@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "aswinkumar863.smarty-template-support",
+    "be5invis.toml",
+    "bungcip.better-toml",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "foxundermoon.shell-format",
+    "golang.go",
+    "GrapeCity.gc-excelviewer",
+    "hashicorp.terraform",
+    "heptio.jsonnet",
+    "jetmartin.bats",
+    "mads-hartmann.bash-ide-vscode",
+    "ms-azuretools.vscode-docker",
+    "PKief.material-icon-theme",
+    "redhat.vscode-yaml",
+    "timonwong.shellcheck",
+    "wholroyd.HCL",
+    "zhuangtongfa.material-theme"
+  ]
+}

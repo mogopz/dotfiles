@@ -16,7 +16,6 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
 plugins=(
   aws
-  docker
   git
   kubectl
   macos
@@ -33,7 +32,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
-alias k="kubectl"
 alias ls="exa"
 alias ll="ls -lah"
 alias vim="nvim"
