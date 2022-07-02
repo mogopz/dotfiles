@@ -1,4 +1,5 @@
 export ZSH="/Users/mog/.oh-my-zsh"
+export PATH="${PATH}:$(go env GOPATH)/bin"
 
 export AWS_PAGER=""
 export HISTCONTROL="ignoreboth"
