@@ -1,6 +1,6 @@
 # 🤖 dotfiles
 
-No fancy install script yet!
+No fancy install script!
 
 ## Manual installs
 

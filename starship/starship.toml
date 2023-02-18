@@ -5,15 +5,15 @@ $git_branch\
 $git_commit\
 $git_state\
 $git_status\
-$golang\
-$package\
-$nodejs\
-$python\
-$terraform\
 $cmd_duration\
 $kubernetes\
+$aws\
 $line_break\
 $character"""
+
+[aws]
+format = ' on [$symbol($profile)]($style)'
+style = "bold yellow"
 
 [[battery.display]]
 threshold = 20
@@ -33,12 +33,7 @@ symbol = "⛵ "
 [nodejs]
 symbol = "🤖 "
 
-[package]
-display_private = true
-
 # disable unused modules
-[aws]
-disabled = true
 
 [crystal]
 disabled = true

@@ -47,6 +47,6 @@
 	"workbench.colorTheme": "One Dark Pro Darker",
 	"workbench.editor.showTabs": true,
 	"workbench.editor.untitled.hint": "hidden",
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": "eq-material-theme-icons-light",
 	"workbench.startupEditor": "newUntitledFile"
 }
