@@ -1,16 +1,25 @@
 [user]
-  name = mogggggg
-  email = my@email.tld
+  name = mog
+  email = github@moop.dev
+  signingkey = 6D1805A452CECB4855DA378A725C09A0F43C4A12
 [core]
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less
 [credential]
   helper = osxkeychain
 [pull]
-  rebase = false
+  rebase = true
 [push]
   default = upstream
-  followTags = true
+  followTags = false
 [log]
   follow = true
   abbrevCommit = true
+[commit]
+	gpgsign = true
+[diff-so-fancy]
+	changeHunkIndicators = false
+[tag]
+	gpgSign = true
+[fetch]
+	prune = true

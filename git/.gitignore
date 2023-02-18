@@ -1,1 +1,8 @@
+# misc
 .DS_Store
+node_modules/
+
+# terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
