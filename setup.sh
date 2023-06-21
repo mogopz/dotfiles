@@ -12,9 +12,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Setup SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
+mkdir -p ~/.SpaceVim.d
 
 # Setup TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Setup symlinks
-ln -s "$(pwd)/dotfiles/.tmux.conf" ~/.tmux.conf
+ln -sf "$(pwd)/dotfiles/git/.gitconfig" ~/.gitconfig
+ln -sf "$(pwd)/dotfiles/git/.gitignore" ~/.gitignore
+
+ln -sf "$(pwd)/dotfiles/spacevim/init.toml" ~/.SpaceVim.d/init.toml
+ln -sf "$(pwd)/dotfiles/starship/starship.toml" ~/.config/starship.toml
+
+ln -sf "$(pwd)/dotfiles/.tmux.conf" ~/.tmux.conf
+ln -sf "$(pwd)/dotfiles/.zshrc" ~/.zshrc

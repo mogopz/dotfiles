@@ -30,9 +30,3 @@
 
 [[layers]]
   name =  "lang#javascript"
-
-[[custom_plugins]]
-  name = "hashivim/vim-terraform"
-
-[[custom_plugins]]
-  name = "juliosueiras/vim-terraform-completion"
