@@ -14,10 +14,6 @@ export LESS_TERMCAP_so=$'\E[38;33;246m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-
 plugins=(
   aws
   git
@@ -37,4 +33,5 @@ alias vim="nvim"
 alias wget="wget --no-hsts"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
