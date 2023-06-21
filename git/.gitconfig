@@ -1,12 +1,22 @@
 [user]
   name = mog
   email = github@moop.dev
-  signingkey = 6D1805A452CECB4855DA378A725C09A0F43C4A12
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO1Vuk70Pio7AeO/2zkPmploRMIk2FxQeANDub0x32sH
 [core]
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less
-[credential]
-  helper = osxkeychain
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
 [pull]
   rebase = true
 [push]
