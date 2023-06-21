@@ -2,7 +2,7 @@
 
 ```bash
 $ git clone https://github.com/mogopz/dotfiles.git ~/dotfiles
-$ ./dotfiles/setup.sh
+$ ~/dotfiles/setup.sh
 ```
 
 ## Screenshot

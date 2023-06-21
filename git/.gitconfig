@@ -12,11 +12,11 @@
 [commit]
   gpgsign = true
 [credential "https://github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [pull]
   rebase = true
 [push]
@@ -26,10 +26,10 @@
   follow = true
   abbrevCommit = true
 [commit]
-	gpgsign = true
+  gpgsign = true
 [diff-so-fancy]
-	changeHunkIndicators = false
+  changeHunkIndicators = false
 [tag]
-	gpgSign = true
+  gpgSign = true
 [fetch]
-	prune = true
+  prune = true
