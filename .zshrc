@@ -26,7 +26,7 @@ source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias ls="exa"
+alias ls="lsd"
 alias ll="ls -lah"
 alias vim="nvim"
 alias wget="wget --no-hsts"
