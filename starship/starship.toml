@@ -12,8 +12,9 @@ $line_break\
 $character"""
 
 [aws]
-format = ' on [$symbol($profile)]($style)'
 style = "bold yellow"
+format = ' on [$symbol($profile)]($style)'
+symbol = "🌥️ "
 
 [[battery.display]]
 threshold = 20

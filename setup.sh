@@ -18,11 +18,13 @@ mkdir -p ~/.SpaceVim.d
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Setup symlinks
+mkdir -p ~/.config/lsd
+mkdir -p ~/.config/alacritty
 ln -sf "$(pwd)/dotfiles/git/.gitconfig" ~/.gitconfig
 ln -sf "$(pwd)/dotfiles/git/.gitignore" ~/.gitignore
+ln -sf "$(pwd)/dotfiles/alacritty/alacritty.yaml" ~/.config/alacritty/alacritty.yml
+ln -sf "$(pwd)/dotfiles/lsd/config.yaml" ~/.config/lsd/config.yaml
 ln -sf "$(pwd)/dotfiles/spacevim/init.toml" ~/.SpaceVim.d/init.toml
 ln -sf "$(pwd)/dotfiles/starship/starship.toml" ~/.config/starship.toml
 ln -sf "$(pwd)/dotfiles/.tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/dotfiles/.zshrc" ~/.zshrc
-mkdir -p ~/.config/lsd
-ln -sf "$(pwd)/dotfiles/lsd/config.yaml" ~/.config/lsd/config.yaml

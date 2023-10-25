@@ -1,4 +1,3 @@
-tap "common-fate/granted"
 tap "gjbae1212/gossm"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
@@ -57,32 +56,32 @@ brew "yarn"
 brew "ykman"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-brew "common-fate/granted/granted"
 brew "gjbae1212/gossm/gossm"
 
-cask "1password-cli", args: { appdir: "/Applications" }
-cask "appcleaner", args: { appdir: "/Applications" }
-cask "discord", args: { appdir: "/Applications" }
-cask "firefox", args: { appdir: "/Applications" }
-cask "font-hack", args: { appdir: "/Applications" }
-cask "font-meslo-for-powerline", args: { appdir: "/Applications" }
-cask "gitify", args: { appdir: "/Applications" }
+cask "1password"
+cask "1password-cli"
+cask "alacritty"
+cask "appcleaner"
+cask "discord"
+cask "firefox"
+cask "font-hack"
+cask "font-meslo-for-powerline"
+cask "gitify"
 cask "google-chrome"
-cask "insomnia", args: { appdir: "/Applications" }
-cask "iterm2", args: { appdir: "/Applications" }
+cask "insomnia"
+cask "iterm2"
 cask "logitech-options"
-cask "notion", args: { appdir: "/Applications" }
+cask "notion"
 cask "orbstack"
-cask "raycast", args: { appdir: "/Applications" }
-cask "rectangle", args: { appdir: "/Applications" }
-cask "signal", args: { appdir: "/Applications" }
-cask "slack", args: { appdir: "/Applications" }
+cask "raycast"
+cask "rectangle"
+cask "signal"
+cask "slack"
 cask "tailscale"
-cask "visual-studio-code", args: { appdir: "/Applications" }
-cask "vlc", args: { appdir: "/Applications" }
-cask "zoom", args: { appdir: "/Applications" }
+cask "visual-studio-code"
+cask "vlc"
+cask "zoom"
 
-# App Store Apps
 mas "Amphetamine", id: 937984704
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
