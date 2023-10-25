@@ -31,6 +31,7 @@ alias ll="ls -lah"
 alias vim="nvim"
 alias wget="wget --no-hsts"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias pr="gh pr create --draft --fill"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
