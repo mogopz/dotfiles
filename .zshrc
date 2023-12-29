@@ -4,7 +4,7 @@ export PATH="${PATH}:$(go env GOPATH)/bin"
 export AWS_PAGER=""
 export HISTCONTROL="ignoreboth"
 
-# coloured man pages
+# Coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -28,10 +28,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 alias ls="lsd"
 alias ll="ls -lah"
-alias vim="nvim"
 alias wget="wget --no-hsts"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-alias pr="gh pr create --draft --fill"
+alias gpr="gh pr create --draft --fill"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
