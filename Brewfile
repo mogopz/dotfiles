@@ -100,4 +100,4 @@ vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
 vscode "redhat.vscode-yaml"
 vscode "tamasfe.even-better-toml"
 vscode "timonwong.shellcheck"
-vscode "yzhang.markdown-all-in-one
+vscode "yzhang.markdown-all-in-one"
