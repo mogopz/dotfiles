@@ -4,7 +4,9 @@ email = github@moop.dev
 signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO1Vuk70Pio7AeO/2zkPmploRMIk2FxQeANDub0x32sH
 [core]
 excludesfile = ~/.gitignore
-pager = diff-so-fancy | less
+pager = delta
+[interactive]
+diffFilter = delta --color-only
 [gpg]
 format = ssh
 [gpg "ssh"]
@@ -27,9 +29,11 @@ follow = true
 abbrevCommit = true
 [commit]
 gpgsign = true
-[diff-so-fancy]
-changeHunkIndicators = false
 [tag]
 gpgSign = true
 [fetch]
 prune = true
+[merge]
+conflictstyle = diff3
+[diff]
+colorMoved = default
