@@ -1,39 +1,36 @@
 [user]
-name = mog
-email = github@moop.dev
-signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO1Vuk70Pio7AeO/2zkPmploRMIk2FxQeANDub0x32sH
+  name = mog
+  email = github@moop.dev
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO1Vuk70Pio7AeO/2zkPmploRMIk2FxQeANDub0x32sH
 [core]
-excludesfile = ~/.gitignore
-pager = delta
-[interactive]
-diffFilter = delta --color-only
+  excludesfile = ~/.gitignore
+  pager = diff-so-fancy | less
+  editor = nvim
 [gpg]
-format = ssh
+  format = ssh
 [gpg "ssh"]
-program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
-gpgsign = true
+  gpgsign = true
 [credential "https://github.com"]
-helper =
-helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-helper =
-helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [pull]
-rebase = true
+  rebase = true
 [push]
-default = upstream
-followTags = false
+  default = upstream
+  followTags = false
 [log]
-follow = true
-abbrevCommit = true
+  follow = true
+  abbrevCommit = true
 [commit]
-gpgsign = true
+  gpgsign = true
 [tag]
-gpgSign = true
+  gpgSign = true
 [fetch]
-prune = true
+  prune = true
 [merge]
-conflictstyle = diff3
-[diff]
-colorMoved = default
+  conflictstyle = diff3
