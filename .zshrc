@@ -22,15 +22,20 @@ plugins=(
   z
 )
 
-source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "${ZSH}/oh-my-zsh.sh"
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-alias ls="lsd"
-alias ll="ls -lah"
-alias wget="wget --no-hsts"
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias gpr="gh pr create --draft --fill"
+alias ll="ls -lah"
+alias ls="lsd"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias vim="nvim"
+alias wget="wget --no-hsts"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
