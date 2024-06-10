@@ -1,55 +1,32 @@
-[colors.bright]
-black = "#6272a4"
-blue = "#d6acff"
-cyan = "#a4ffff"
-green = "#69ff94"
-magenta = "#ff92df"
-red = "#ff6e6e"
-white = "#ffffff"
-yellow = "#ffffa5"
-
-[colors.cursor]
-cursor = "#f8f8f2"
-text = "#282a36"
-
-[colors.footer_bar]
-background = "#282a36"
-foreground = "#f8f8f2"
-
-[colors.hints.end]
-background = "#282a36"
-foreground = "#f1fa8c"
-
-[colors.hints.start]
-background = "#f1fa8c"
-foreground = "#282a36"
-
-[colors.normal]
-black = "#21222c"
-blue = "#bd93f9"
-cyan = "#8be9fd"
-green = "#50fa7b"
-magenta = "#ff79c6"
-red = "#ff5555"
-white = "#f8f8f2"
-yellow = "#f1fa8c"
-
+[colors]
 [colors.primary]
-background = "#282a36"
-bright_foreground = "#ffffff"
-foreground = "#f8f8f2"
+background = '#1a1b26'
+foreground = '#a9b1d6'
 
-[colors.search.focused_match]
-background = "#ffb86c"
-foreground = "#44475a"
+# Normal colors
+[colors.normal]
+black = '#32344a'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#ad8ee6'
+cyan = '#449dab'
+white = '#787c99'
 
-[colors.search.matches]
-background = "#50fa7b"
-foreground = "#44475a"
+# Bright colors
+[colors.bright]
+black = '#444b6a'
+red = '#ff7a93'
+green = '#b9f27c'
+yellow = '#ff9e64'
+blue = '#7da6ff'
+magenta = '#bb9af7'
+cyan = '#0db9d7'
+white = '#acb0d0'
 
 [colors.selection]
-background = "#44475a"
-text = "CellForeground"
+background = '#7aa2f7'
 
 [colors.vi_mode_cursor]
 cursor = "CellForeground"
@@ -59,16 +36,23 @@ text = "CellBackground"
 TERM = "xterm-256color"
 
 [font]
-size = 12
-
-[font.bold]
-family = "Meslo LG L DZ for Powerline"
-
-[font.italic]
-family = "Meslo LG L DZ for Powerline"
+size = 13
 
 [font.normal]
-family = "Meslo LG L DZ for Powerline"
+family = "CaskaydiaMono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "CaskaydiaMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "CaskaydiaMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "CaskaydiaMono Nerd Font Mono"
+style = "Bold Italic"
 
 [[keyboard.bindings]]
 chars = "\u001BF"
@@ -96,5 +80,5 @@ mods = "Command"
 decorations = "transparent"
 
 [window.padding]
-x = 10
+x = 1
 y = 25

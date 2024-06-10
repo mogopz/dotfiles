@@ -13,8 +13,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Setup TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Setup Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Setup Neovim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+cat <<EOF > ~/.config/nvim/lua/plugins/theme.lua
+return {
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "tokyonight",
+		},
+	},
+}
+EOF
 
 # Setup symlinks
 mkdir -p ~/.config/lsd
@@ -23,10 +33,6 @@ ln -sf "$(pwd)/dotfiles/git/.gitconfig" ~/.gitconfig
 ln -sf "$(pwd)/dotfiles/git/.gitignore" ~/.gitignore
 ln -sf "$(pwd)/dotfiles/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
 ln -sf "$(pwd)/dotfiles/lsd/config.yaml" ~/.config/lsd/config.yaml
-ln -sf "$(pwd)/dotfiles/vim/.vimrc" ~/.vimrc
 ln -sf "$(pwd)/dotfiles/starship/starship.toml" ~/.config/starship.toml
 ln -sf "$(pwd)/dotfiles/.tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/dotfiles/.zshrc" ~/.zshrc
-
-# Install Vundle plugins
-vim +PluginInstall +qall

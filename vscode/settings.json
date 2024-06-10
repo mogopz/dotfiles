@@ -1,0 +1,73 @@
+{
+	"[dockerfile]": {
+			"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"[hcl]": {},
+	"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[markdown]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[shellscript]": {
+			"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"[yaml]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"diffEditor.hideUnchangedRegions.enabled": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.autoIndent": "full",
+	"editor.colorDecorators": false,
+	"editor.cursorBlinking": "solid",
+	"editor.fontFamily": "CaskaydiaMono Nerd Font",
+	"editor.fontSize": 12,
+	"editor.inlineSuggest.enabled": true,
+	"editor.minimap.enabled": false,
+	"editor.quickSuggestions": {
+			"comments": false,
+			"other": false,
+			"strings": false
+	},
+	"editor.selectionHighlight": false,
+	"editor.stickyScroll.enabled": true,
+	"editor.suggestOnTriggerCharacters": false,
+	"editor.tabCompletion": "on",
+	"editor.tabSize": 2,
+	"editor.wordWrap": "on",
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"extensions.ignoreRecommendations": true,
+	"files.associations": {
+			"*.tf": "terraform",
+			"*.tftpl": "hcl",
+			"*.tpl": "helm"
+	},
+	"git.autofetch": true,
+	"git.openRepositoryInParentFolders": "always",
+	"go.toolsManagement.autoUpdate": true,
+	"prettier.printWidth": 120,
+	"redhat.telemetry.enabled": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"shellcheck.ignorePatterns": {
+			"**/*.tpl": true
+	},
+	"telemetry.telemetryLevel": "off",
+	"terminal.integrated.fontFamily": "CaskaydiaMono Nerd Font",
+	"window.restoreWindows": "none",
+	"window.titleBarStyle": "custom",
+	"workbench.colorTheme": "Tokyo Night",
+	"workbench.editor.empty.hint": "hidden",
+	"workbench.editor.showTabs": "multiple",
+	"workbench.iconTheme": "eq-material-theme-icons-light",
+	"workbench.startupEditor": "newUntitledFile"
+}
