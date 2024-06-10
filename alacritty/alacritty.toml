@@ -1,36 +1,4 @@
-[colors]
-[colors.primary]
-background = '#1a1b26'
-foreground = '#a9b1d6'
-
-# Normal colors
-[colors.normal]
-black = '#32344a'
-red = '#f7768e'
-green = '#9ece6a'
-yellow = '#e0af68'
-blue = '#7aa2f7'
-magenta = '#ad8ee6'
-cyan = '#449dab'
-white = '#787c99'
-
-# Bright colors
-[colors.bright]
-black = '#444b6a'
-red = '#ff7a93'
-green = '#b9f27c'
-yellow = '#ff9e64'
-blue = '#7da6ff'
-magenta = '#bb9af7'
-cyan = '#0db9d7'
-white = '#acb0d0'
-
-[colors.selection]
-background = '#7aa2f7'
-
-[colors.vi_mode_cursor]
-cursor = "CellForeground"
-text = "CellBackground"
+import = ["~/.config/alacritty/dracula.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -39,19 +7,19 @@ TERM = "xterm-256color"
 size = 13
 
 [font.normal]
-family = "CaskaydiaMono Nerd Font Mono"
+family = "JetBrains Mono"
 style = "Regular"
 
 [font.bold]
-family = "CaskaydiaMono Nerd Font Mono"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.italic]
-family = "CaskaydiaMono Nerd Font Mono"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.bold_italic]
-family = "CaskaydiaMono Nerd Font Mono"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [[keyboard.bindings]]
@@ -80,5 +48,5 @@ mods = "Command"
 decorations = "transparent"
 
 [window.padding]
-x = 1
+x = 16
 y = 25
