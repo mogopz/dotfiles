@@ -29,15 +29,10 @@
 	"editor.autoIndent": "full",
 	"editor.colorDecorators": false,
 	"editor.cursorBlinking": "solid",
-	"editor.fontFamily": "CaskaydiaMono Nerd Font",
+	"editor.fontFamily": "JetBrains Mono",
 	"editor.fontSize": 12,
 	"editor.inlineSuggest.enabled": true,
 	"editor.minimap.enabled": false,
-	"editor.quickSuggestions": {
-			"comments": false,
-			"other": false,
-			"strings": false
-	},
 	"editor.selectionHighlight": false,
 	"editor.stickyScroll.enabled": true,
 	"editor.suggestOnTriggerCharacters": false,
@@ -62,7 +57,7 @@
 			"**/*.tpl": true
 	},
 	"telemetry.telemetryLevel": "off",
-	"terminal.integrated.fontFamily": "CaskaydiaMono Nerd Font",
+	"terminal.integrated.fontFamily": "JetBrains Mono",
 	"window.restoreWindows": "none",
 	"window.titleBarStyle": "custom",
 	"workbench.colorTheme": "Tokyo Night",
