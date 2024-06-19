@@ -2,35 +2,42 @@
   name = mog
   email = github@moop.dev
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO1Vuk70Pio7AeO/2zkPmploRMIk2FxQeANDub0x32sH
+[branch]
+  sort = -committerdate
+[color]
+  ui = true
+[column]
+  ui = auto
+[commit]
+  gpgsign = true
 [core]
   excludesfile = ~/.gitignore
-  pager = diff-so-fancy | less
   editor = nvim
+[fetch]
+  all = true
+  prune = true
+  pruneTags = true
 [gpg]
   format = ssh
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-[commit]
-  gpgsign = true
-[credential "https://github.com"]
-  helper =
-  helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-  helper =
-  helper = !/opt/homebrew/bin/gh auth git-credential
+[init]
+  defaultBranch = main
+[log]
+  abbrevCommit = true
+  follow = true
 [pull]
   rebase = true
 [push]
-  default = upstream
-  followTags = false
-[log]
-  follow = true
-  abbrevCommit = true
-[commit]
-  gpgsign = true
+  autoSetupRemote = true
+  default = simple
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[rerere]
+  autoupdate = true
+  enabled = true
 [tag]
   gpgSign = true
-[fetch]
-  prune = true
-[merge]
-  conflictstyle = diff3
+  sort = version:refname
