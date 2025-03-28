@@ -31,14 +31,11 @@ source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 source <(switcher init zsh)
 
 alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
 alias k="kubecolor"
 alias kctx="switch"
 alias kns="switch ns"
 alias ll="ls -lah"
 alias ls="lsd"
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias vim="nvim"
 alias wget="wget --no-hsts"
 

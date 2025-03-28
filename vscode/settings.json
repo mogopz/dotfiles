@@ -1,28 +1,21 @@
 {
 	"[dockerfile]": {
-			"editor.defaultFormatter": "ms-azuretools.vscode-docker"
-	},
-	"[hcl]": {},
-	"[html]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
 	},
 	"[javascript]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[jsonc]": {
-			"editor.defaultFormatter": "vscode.json-language-features"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[markdown]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
 	},
 	"[shellscript]": {
-			"editor.defaultFormatter": "foxundermoon.shell-format"
+		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
 	"[yaml]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"diffEditor.hideUnchangedRegions.enabled": true,
 	"diffEditor.ignoreTrimWhitespace": false,
@@ -30,22 +23,21 @@
 	"editor.colorDecorators": false,
 	"editor.cursorBlinking": "solid",
 	"editor.fontFamily": "JetBrains Mono",
-	"editor.fontSize": 12,
-	"editor.inlineSuggest.enabled": true,
-	"editor.minimap.enabled": false,
-	"editor.selectionHighlight": false,
-	"editor.stickyScroll.enabled": true,
+	"editor.fontLigatures": false,
 	"editor.suggestOnTriggerCharacters": false,
+	"editor.fontSize": 12,
 	"editor.tabCompletion": "on",
+	"editor.occurrencesHighlight": "off",
+	"editor.minimap.enabled": false,
 	"editor.tabSize": 2,
 	"editor.wordWrap": "on",
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
 	"extensions.ignoreRecommendations": true,
 	"files.associations": {
-			"*.tf": "terraform",
-			"*.tftpl": "hcl",
-			"*.tpl": "helm"
+		"*.tf": "terraform",
+		"*.tftpl": "hcl",
+		"*.tpl": "helm"
 	},
 	"git.autofetch": true,
 	"git.openRepositoryInParentFolders": "always",
@@ -54,13 +46,13 @@
 	"redhat.telemetry.enabled": false,
 	"security.workspace.trust.untrustedFiles": "open",
 	"shellcheck.ignorePatterns": {
-			"**/*.tpl": true
+		"**/*.tpl": true
 	},
 	"telemetry.telemetryLevel": "off",
 	"terminal.integrated.fontFamily": "JetBrains Mono",
 	"window.restoreWindows": "none",
 	"window.titleBarStyle": "custom",
-	"workbench.colorTheme": "Tokyo Night",
+	"workbench.colorTheme": "Dracula Theme",
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.editor.showTabs": "multiple",
 	"workbench.iconTheme": "eq-material-theme-icons-light",

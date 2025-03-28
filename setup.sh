@@ -30,11 +30,9 @@ EOF
 
 # Setup symlinks
 mkdir -p ~/.config/lsd
-mkdir -p ~/.config/alacritty
+ln -sf "$(pwd)/dotfiles/ghostty/config.toml" "${HOME}/Library/Application\ Support/com.mitchellh.ghostty/config"
 ln -sf "$(pwd)/dotfiles/git/.gitconfig" ~/.gitconfig
 ln -sf "$(pwd)/dotfiles/git/.gitignore" ~/.gitignore
-ln -sf "$(pwd)/dotfiles/alacritty/dracula.toml" ~/.config/alacritty/dracula.toml
-ln -sf "$(pwd)/dotfiles/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
 ln -sf "$(pwd)/dotfiles/lsd/config.yaml" ~/.config/lsd/config.yaml
 ln -sf "$(pwd)/dotfiles/starship/starship.toml" ~/.config/starship.toml
 ln -sf "$(pwd)/dotfiles/.tmux.conf" ~/.tmux.conf
