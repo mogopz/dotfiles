@@ -13,18 +13,8 @@ brew bundle --file ~/dotfiles/Brewfile
 # Setup TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Setup Neovim
+# Setup LazyVim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
-cat <<EOF > ~/.config/nvim/lua/plugins/theme.lua
-return {
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    }
-  }
-}
-EOF
 
 # Setup Zsh highlighting
 git clone https://github.com/catppuccin/zsh-syntax-highlighting.git catppuccin-zsh-syntax-highlighting
