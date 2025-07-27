@@ -30,7 +30,6 @@ rm -rf catppuccin-zsh-syntax-highlighting
 
 # Setup symlinks
 mkdir -p ~/.config/lsd
-ln -sf "$(pwd)/dotfiles/ghostty/config.toml" "${HOME}/Library/Application Support/com.mitchellh.ghostty/config"
 ln -sf "$(pwd)/dotfiles/git/.gitconfig" ~/.gitconfig
 ln -sf "$(pwd)/dotfiles/git/.gitignore" ~/.gitignore
 ln -sf "$(pwd)/dotfiles/lsd/config.yaml" ~/.config/lsd/config.yaml
