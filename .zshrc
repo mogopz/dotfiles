@@ -22,22 +22,19 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
-
-alias k="kubecolor"
-alias kns="kubens"
-alias kctx="kubectx"
-alias ll="ls -lah"
-alias ls="lsd"
-alias vim="nvim"
 
 alias gaa="git add --all"
 alias gcmsg="git commit --message"
 alias ggp="git push"
-
 alias glods='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset" --date=short'
-
+alias k="kubecolor"
+alias kctx="kubectx"
+alias kns="kubens"
+alias ll="ls -lah"
+alias ls="lsd"
+alias vim="nvim"
 
 compdef kubecolor=kubectl
 
