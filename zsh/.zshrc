@@ -9,7 +9,6 @@ export EDITOR="nvim"
 export KUBE_EDITOR="nvim"
 export KUBECTL_EXTERNAL_DIFF="delta --paging never"
 export SUDO_EDITOR="${EDITOR}"
-export WORDCHARS=${WORDCHARS//-/}
 
 # Coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'

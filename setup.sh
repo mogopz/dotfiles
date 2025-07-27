@@ -2,10 +2,13 @@
 
 set -eo pipefail
 
+# Install dependencies
+xcode-select --install
+
 # Setup Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
-brew bundle --file "${HOME}/dotfiles/Brewfile"
+brew bundle --file ~/dotfiles/Brewfile
 
 # Setup TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -29,11 +32,4 @@ cp -v catppuccin-zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-high
 rm -rf catppuccin-zsh-syntax-highlighting
 
 # Setup symlinks
-mkdir -p ~/.config/lsd
-ln -sf "$(pwd)/dotfiles/git/.gitconfig" ~/.gitconfig
-ln -sf "$(pwd)/dotfiles/git/.gitignore" ~/.gitignore
-ln -sf "$(pwd)/dotfiles/lsd/config.yaml" ~/.config/lsd/config.yaml
-ln -sf "$(pwd)/dotfiles/lsd/colors.yaml" ~/.config/lsd/colors.yaml
-ln -sf "$(pwd)/dotfiles/starship/starship.toml" ~/.config/starship.toml
-ln -sf "$(pwd)/dotfiles/.tmux.conf" ~/.tmux.conf
-ln -sf "$(pwd)/dotfiles/.zshrc" ~/.zshrc
+stow -v -d ~/dotfiles -t ~ ghostty rectangle git lsd nvim rectangle starship tmux vscode zsh
