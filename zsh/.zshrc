@@ -1,14 +1,40 @@
 autoload -Uz compinit
 compinit
 
+# Map home + end keys
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+
+# Set word boundaries
+autoload -U select-word-style
+select-word-style bash
+
+# History configuration
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt SHARE_HISTORY
+
+# Enable history search with up/down arrows
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 export AWS_PAGER=""
 export ARGOCD_OPTS="--grpc-web"
-export HISTCONTROL="ignoreboth"
+export BAT_PAGER=""
 export BAT_THEME="Catppuccin Mocha"
 export EDITOR="nvim"
 export KUBE_EDITOR="nvim"
+export GOSS_PATH="/usr/local/bin/goss"
+export PATH="${PATH}:$(go env GOPATH)/bin"
 export KUBECTL_EXTERNAL_DIFF="delta --paging never"
-export SUDO_EDITOR="${EDITOR}"
 
 # Coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
