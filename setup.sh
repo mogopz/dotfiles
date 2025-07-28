@@ -10,6 +10,11 @@ xcode-select --install
 brew doctor
 brew bundle --file ~/dotfiles/Brewfile
 
+# Setup BAT theme
+mkdir -p "$(bat --config-dir)/themes"
+wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+bat cache --build
+
 # Setup TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
