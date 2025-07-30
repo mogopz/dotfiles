@@ -16,8 +16,13 @@ $character"""
 
 palette = "catppuccin_mocha"
 
+[character]
+error_symbol = "[✗](bold red)"
+success_symbol = "[➜](bold green)"
+
 [aws]
-symbol = "  "
+symbol = " "
+format = ' [$symbol($profile)]($style)'
 
 [[battery.display]]
 threshold = 20
