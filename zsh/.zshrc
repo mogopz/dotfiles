@@ -63,5 +63,5 @@ alias vim="nvim"
 
 compdef kubecolor=kubectl
 
-eval "$(fnm env --use-on-cd)"
+eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
