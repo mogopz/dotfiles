@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [      
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(pwd:*)",
+      "Bash(cd:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(curl:*)",
+      "Bash(echo:*)",
+      "WebFetch(domain:argo-cd.readthedocs.io)",
+      "WebFetch(domain:developer.mozilla.org)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:docs.aws.amazon.com)",
+      "WebFetch(domain:docs.github.com)",
+      "WebFetch(domain:external-secrets.io)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:go.dev)",
+      "WebFetch(domain:grafana.com)",
+      "WebFetch(domain:helm.sh)",
+      "WebFetch(domain:kubernetes.io)",
+      "WebFetch(domain:mongodb.com)",
+      "WebFetch(domain:pkg.go.dev)",
+      "WebFetch(domain:prometheus.io)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:stackoverflow.com)",
+      "WebFetch(domain:terraform.io)"
+    ],
+    "deny": []
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  }
+}
