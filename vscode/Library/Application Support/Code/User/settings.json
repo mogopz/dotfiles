@@ -14,7 +14,6 @@
 	"[yaml]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"diffEditor.hideUnchangedRegions.enabled": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"editor.autoIndent": "full",
 	"editor.colorDecorators": false,
@@ -53,5 +52,6 @@
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.editor.showTabs": "multiple",
 	"workbench.iconTheme": "catppuccin-mocha",
-	"workbench.startupEditor": "newUntitledFile"
+	"workbench.startupEditor": "newUntitledFile",
+	"diffEditor.hideUnchangedRegions.enabled": true
 }

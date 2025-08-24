@@ -27,4 +27,4 @@ cp -v catppuccin-zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-high
 rm -rf catppuccin-zsh-syntax-highlighting
 
 # Setup symlinks
-stow -v -d ~/dotfiles -t ~ ghostty rectangle git lsd nvim rectangle starship tmux vscode zsh
+stow -v -d ~/dotfiles -t ~ claude ghostty rectangle git lsd nvim rectangle starship tmux vscode zsh
