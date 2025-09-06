@@ -53,5 +53,5 @@
 	"workbench.editor.showTabs": "multiple",
 	"workbench.iconTheme": "catppuccin-mocha",
 	"workbench.startupEditor": "newUntitledFile",
-	"diffEditor.hideUnchangedRegions.enabled": true
+	"diffEditor.hideUnchangedRegions.enabled": true,
 }

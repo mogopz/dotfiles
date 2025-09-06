@@ -10,10 +10,15 @@ autoload -U select-word-style
 select-word-style bash
 
 # History configuration
-setopt HIST_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_SPACE
-setopt SHARE_HISTORY
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt share_history
 
 # Enable history search with up/down arrows
 autoload -U up-line-or-beginning-search
