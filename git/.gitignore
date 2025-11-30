@@ -1,7 +1,6 @@
-# misc
 .DS_Store
-node_modules/
-
-# terraform
-.terraform/
 *.tfstate
+AGENTS.md
+
+.terraform/
+node_modules/

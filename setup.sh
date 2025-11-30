@@ -15,9 +15,6 @@ mkdir -p "$(bat --config-dir)/themes"
 wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 bat cache --build
 
-# Setup TPM
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Setup LazyVim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
@@ -27,4 +24,4 @@ cp -v catppuccin-zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-high
 rm -rf catppuccin-zsh-syntax-highlighting
 
 # Setup symlinks
-stow -v -d ~/dotfiles -t ~ claude ghostty rectangle git lsd nvim rectangle starship tmux vscode zsh
+stow -v -d ~/dotfiles -t ~ ghostty rectangle git lsd nvim rectangle starship zed zsh

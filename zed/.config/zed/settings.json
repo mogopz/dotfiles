@@ -1,0 +1,14 @@
+{
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "buffer_font_family": "JetBrains Mono",
+  "terminal": {
+    "font_size": 13.0
+  },
+  "cursor_blink": false,
+  "buffer_font_size": 12.0,
+  "icon_theme": "Catppuccin Mocha",
+  "theme": "Catppuccin Mocha"
+}
