@@ -2,6 +2,12 @@
   name = mog
   email = github@moop.dev
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO1Vuk70Pio7AeO/2zkPmploRMIk2FxQeANDub0x32sH
+[credential "https://github.com"]
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [branch]
   sort = -committerdate
 [color]

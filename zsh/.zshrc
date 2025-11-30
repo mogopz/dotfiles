@@ -55,6 +55,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
 
+alias cat="bat --plain"
 alias gaa="git add --all"
 alias gcmsg="git commit --message"
 alias ggp="git push"
@@ -64,6 +65,7 @@ alias kctx="kubectx"
 alias kns="kubens"
 alias ll="ls -lah"
 alias ls="lsd"
+alias todo="rg \"todo|fixme\" --colors match:fg:yellow --colors match:style:bold"
 alias vim="nvim"
 
 compdef kubecolor=kubectl
