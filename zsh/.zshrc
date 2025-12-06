@@ -53,7 +53,6 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
-source <(fzf --zsh)
 
 alias cat="bat --plain"
 alias gaa="git add --all"
@@ -65,7 +64,7 @@ alias kctx="kubectx"
 alias kns="kubens"
 alias ll="ls -lah"
 alias ls="lsd"
-alias todo="rg \"todo|fixme\" --colors match:fg:yellow --colors match:style:bold"
+alias todo="rg \"TODO\" --colors match:fg:yellow --colors match:style:bold"
 alias vim="nvim"
 
 compdef kubecolor=kubectl

@@ -67,7 +67,6 @@ crust = "#11111b"
 
 [aws]
 disabled = true
-format = ' [$symbol($profile)]($style)'
 
 [buf]
 disabled = true

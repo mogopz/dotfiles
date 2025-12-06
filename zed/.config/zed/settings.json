@@ -1,14 +1,38 @@
 {
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "editorconfig": true,
+    "git-firefly": true,
+    "html": true,
+    "lua": true,
+    "make": true,
+    "sql": true,
+    "terraform": true,
+    "toml": true
+  },
+  "auto_update": true,
+  "base_keymap": "VSCode",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 12.0,
+  "collaboration_panel": {
+    "button": false
+  },
+  "cursor_blink": false,
+  "icon_theme": "Catppuccin Mocha",
   "tabs": {
     "file_icons": true,
     "git_status": true
   },
-  "buffer_font_family": "JetBrains Mono",
   "terminal": {
+    "font_family": "JetBrains Mono",
     "font_size": 13.0
   },
-  "cursor_blink": false,
-  "buffer_font_size": 12.0,
-  "icon_theme": "Catppuccin Mocha",
-  "theme": "Catppuccin Mocha"
+  "theme": {
+    "dark": "Catppuccin Mocha",
+    "light": "Catppuccin Latte",
+    "mode": "system"
+  }
 }
