@@ -1,6 +1,5 @@
 .DS_Store
 *.tfstate
-AGENTS.md
 
 .terraform/
 node_modules/

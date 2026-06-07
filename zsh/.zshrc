@@ -1,9 +1,17 @@
 autoload -Uz compinit
 compinit
 
+# Keep ZLE in Emacs mode even though EDITOR is nvim.
+bindkey -e
+
 # Map home + end keys
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
+
+# Delete previous word across terminals that encode Option+Backspace differently.
+bindkey "^W" backward-kill-word
+bindkey "^[^?" backward-kill-word
+bindkey "^[^H" backward-kill-word
 
 # Set word boundaries
 autoload -U select-word-style
@@ -64,6 +72,7 @@ alias kctx="kubectx"
 alias kns="kubens"
 alias ll="ls -lah"
 alias ls="lsd"
+alias ofd="open ."
 alias todo="rg \"TODO\" --colors match:fg:yellow --colors match:style:bold"
 alias vim="nvim"
 

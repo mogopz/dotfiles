@@ -1,4 +1,30 @@
 {
+  "edit_predictions": {
+    "allow_data_collection": "no",
+  },
+  "cli_default_open_behavior": "new_window",
+  "agent_servers": {
+    "codex-acp": {
+      "default_config_options": {
+        "mode": "read-only",
+      },
+      "type": "registry",
+    },
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "show_turn_stats": true,
+    "sidebar_side": "right",
+    "dock": "right",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
   "auto_install_extensions": {
     "catppuccin": true,
     "catppuccin-icons": true,
@@ -6,33 +32,31 @@
     "dockerfile": true,
     "editorconfig": true,
     "git-firefly": true,
-    "html": true,
     "lua": true,
     "make": true,
     "sql": true,
     "terraform": true,
-    "toml": true
+    "toml": true,
   },
-  "auto_update": true,
-  "base_keymap": "VSCode",
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 12.0,
   "collaboration_panel": {
-    "button": false
+    "dock": "left",
+    "button": false,
   },
   "cursor_blink": false,
   "icon_theme": "Catppuccin Mocha",
   "tabs": {
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
   "terminal": {
-    "font_family": "JetBrains Mono",
-    "font_size": 13.0
+    "option_as_meta": true,
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "font_size": 13.0,
   },
   "theme": {
     "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte",
-    "mode": "system"
-  }
+  },
 }
