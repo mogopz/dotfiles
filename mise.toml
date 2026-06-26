@@ -1,0 +1,163 @@
+[settings]
+experimental = true
+color_theme = "catppuccin"
+dotfiles.root = "~/dotfiles"
+dotfiles.default_mode = "symlink"
+
+[tools]
+node = "lts"
+terraform = "latest"
+
+[bootstrap.brew.taps]
+"gjbae1212/gossm" = "https://github.com/gjbae1212/homebrew-gossm.git"
+
+[bootstrap.packages]
+"brew:age" = "latest"
+"brew:argocd" = "latest"
+"brew:awscli" = "latest"
+"brew:bat" = "latest"
+"brew:btop" = "latest"
+"brew:coreutils" = "latest"
+"brew:crane" = "latest"
+"brew:curl" = "latest"
+"brew:diff-so-fancy" = "latest"
+"brew:dive" = "latest"
+"brew:docker-credential-helper-ecr" = "latest"
+"brew:gh" = "latest"
+"brew:git" = "latest"
+"brew:git-delta" = "latest"
+"brew:git-xargs" = "latest"
+"brew:gjbae1212/gossm/gossm" = "latest"
+"brew:gnupg" = "latest"
+"brew:go" = "latest"
+"brew:granted" = "latest"
+"brew:hadolint" = "latest"
+"brew:helm" = "latest"
+"brew:htop" = "latest"
+"brew:httpie" = "latest"
+"brew:jq" = "latest"
+"brew:kind" = "latest"
+"brew:kube-score" = "latest"
+"brew:kubecolor" = "latest"
+"brew:kubeconform" = "latest"
+"brew:kubernetes-cli" = "latest"
+"brew:kubectx" = "latest"
+"brew:kustomize" = "latest"
+"brew:lazydocker" = "latest"
+"brew:lazygit" = "latest"
+"brew:lsd" = "latest"
+"brew:macchina" = "latest"
+"brew:mas" = "latest"
+"brew:mise" = "latest"
+"brew:neovim" = "latest"
+"brew:nmap" = "latest"
+"brew:nushell" = "latest"
+"brew:pnpm" = "latest"
+"brew:pre-commit" = "latest"
+"brew:ripgrep" = "latest"
+"brew:shellcheck" = "latest"
+"brew:skopeo" = "latest"
+"brew:sops" = "latest"
+"brew:starship" = "latest"
+"brew:staticcheck" = "latest"
+"brew:stern" = "latest"
+"brew:terraform-docs" = "latest"
+"brew:terragrunt" = "latest"
+"brew:tree" = "latest"
+"brew:trivy" = "latest"
+"brew:uv" = "latest"
+"brew:wget" = "latest"
+"brew:yamllint" = "latest"
+"brew:yarn" = "latest"
+"brew:yq" = "latest"
+"brew:zsh-autosuggestions" = "latest"
+"brew:zsh-syntax-highlighting" = "latest"
+"mas:937984704" = "latest"                     # Amphetamine
+
+[bootstrap.macos.dock]
+autohide = true
+tilesize = 45
+magnification = false
+show_recents = false
+
+[bootstrap.macos.finder]
+show_pathbar = true
+preferred_view_style = "list"
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+
+[bootstrap.hooks.pre-dotfiles]
+run = '''
+if [ ! -d "${HOME}/.config/nvim/.git" ]; then
+  if [ -e "${HOME}/.config/nvim" ]; then
+    echo "~/.config/nvim exists but is not a LazyVim checkout; leaving it alone" >&2
+  else
+    git clone https://github.com/LazyVim/starter "${HOME}/.config/nvim"
+  fi
+fi
+'''
+
+[dotfiles]
+"~/.config/ghostty" = ".config/ghostty"
+"~/.config/git/config" = ".config/git/config"
+"~/.config/git/ignore" = ".config/git/ignore"
+"~/.config/lsd" = ".config/lsd"
+"~/.config/nvim/lua/plugins/theme.lua" = ".config/nvim/theme.lua"
+"~/.config/starship.toml" = ".config/starship/starship.toml"
+"~/.config/zed/settings.json" = ".config/zed/settings.json"
+"~/Library/Application Support/Rectangle" = ".config/rectangle"
+"~/.zshrc" = ".config/zsh/.zshrc"
+
+[tasks.bootstrap]
+description = "Install supplemental theme assets"
+run = '''
+set -euo pipefail
+
+bat_theme_dir="$(bat --config-dir)/themes"
+bat_theme_file="${bat_theme_dir}/Catppuccin Mocha.tmTheme"
+mkdir -p "${bat_theme_dir}"
+if [ ! -f "${bat_theme_file}" ]; then
+  curl -fsSL \
+    --output "${bat_theme_file}" \
+    "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme"
+fi
+bat cache --build
+
+zsh_theme_file="${HOME}/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh"
+mkdir -p "${HOME}/.zsh"
+if [ ! -f "${zsh_theme_file}" ]; then
+  tmp_dir="$(mktemp -d)"
+  trap 'rm -rf "${tmp_dir}"' EXIT
+  git clone --depth 1 https://github.com/catppuccin/zsh-syntax-highlighting.git "${tmp_dir}/zsh-syntax-highlighting"
+  cp "${tmp_dir}/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh" "${zsh_theme_file}"
+fi
+
+# mise does not fully support casks yet.
+# https://mise.jdx.dev/bootstrap/packages/brew.html#casks
+brew install --cask \
+  1password \
+  1password-cli \
+  appcleaner \
+  codex \
+  discord \
+  firefox \
+  font-jetbrains-mono \
+  font-jetbrains-mono-nerd-font \
+  ghostty \
+  gitify \
+  google-chrome \
+  helium-browser \
+  insomnia \
+  jordanbaird-ice \
+  obsidian \
+  orbstack \
+  raycast \
+  rectangle \
+  signal \
+  slack \
+  tailscale-app \
+  terraform-linters/tap/tflint \
+  vlc \
+  zed
+'''
