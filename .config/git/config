@@ -17,7 +17,7 @@
 [commit]
   gpgsign = true
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.config/git/ignore
   editor = nvim
 [fetch]
   all = true

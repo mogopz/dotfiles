@@ -6,7 +6,7 @@
   "agent_servers": {
     "codex-acp": {
       "default_config_options": {
-        "mode": "read-only",
+        "mode": "agent",
       },
       "type": "registry",
     },

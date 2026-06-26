@@ -1,12 +1,22 @@
 # 🤖 dotfiles
 
-```bash
-# Run the setup script to bootstrap a machine from scratch
-$ git clone https://github.com/mogopz/dotfiles.git ~/dotfiles
-$ ~/dotfiles/setup.sh
+## Dependencies
 
-# Sync individual config using Stow
-$ stow -v -d ~/dotfiles -t ~ nvim
+```bash
+$ xcode-select --install
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+$ eval "$(/opt/homebrew/bin/brew shellenv)"
+$ brew install mise
+```
+
+## Bootstrap
+
+```bash
+$ git clone https://github.com/mogopz/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles
+$ mise trust
+$ mise bootstrap --yes --force-dotfiles --skip packages,tools,task
+$ mise bootstrap --yes
 ```
 
 ## Screenshot
