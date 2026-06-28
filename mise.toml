@@ -74,6 +74,10 @@ terraform = "latest"
 "brew:zsh-syntax-highlighting" = "latest"
 "mas:937984704" = "latest"                     # Amphetamine
 
+[bootstrap.repos]
+"~/dotfiles" = { url = "https://github.com/mogopz/dotfiles", ref = "main" }
+"~/.config/nvim" = { url = "https://github.com/LazyVim/starter", ref = "main" }
+
 [bootstrap.macos.dock]
 autohide = true
 tilesize = 45
@@ -87,21 +91,30 @@ preferred_view_style = "list"
 [bootstrap.macos.trackpad]
 tap_to_click = true
 
-[bootstrap.hooks.pre-dotfiles]
+[bootstrap.hooks.pre-repos]
 run = '''
-if [ ! -d "${HOME}/.config/nvim/.git" ]; then
-  if [ -e "${HOME}/.config/nvim" ]; then
-    echo "~/.config/nvim exists but is not a LazyVim checkout; leaving it alone" >&2
-  else
-    git clone https://github.com/LazyVim/starter "${HOME}/.config/nvim"
-  fi
+nvim_exclude="${HOME}/.config/nvim/.git/info/exclude"
+if [ -f "${nvim_exclude}" ]; then
+  for pattern in lazy-lock.json lazyvim.json lua/plugins/theme.lua; do
+    grep -qxF "${pattern}" "${nvim_exclude}" || printf '%s\n' "${pattern}" >> "${nvim_exclude}"
+  done
+fi
+'''
+
+[bootstrap.hooks.post-repos]
+run = '''
+nvim_exclude="${HOME}/.config/nvim/.git/info/exclude"
+if [ -f "${nvim_exclude}" ]; then
+  for pattern in lazy-lock.json lazyvim.json lua/plugins/theme.lua; do
+    grep -qxF "${pattern}" "${nvim_exclude}" || printf '%s\n' "${pattern}" >> "${nvim_exclude}"
+  done
 fi
 '''
 
 [dotfiles]
 "~/.config/ghostty" = ".config/ghostty"
-"~/.config/git/config" = ".config/git/config"
-"~/.config/git/ignore" = ".config/git/ignore"
+"~/.gitconfig" = ".config/git/config"
+"~/.gitignore" = ".config/git/ignore"
 "~/.config/lsd" = ".config/lsd"
 "~/.config/nvim/lua/plugins/theme.lua" = ".config/nvim/theme.lua"
 "~/.config/starship.toml" = ".config/starship/starship.toml"
