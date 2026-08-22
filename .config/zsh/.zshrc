@@ -39,6 +39,8 @@ bindkey "^[[B" down-line-or-beginning-search
 # Case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+eval "$(mise activate zsh)"
+
 export AWS_PAGER=""
 export ARGOCD_OPTS="--grpc-web"
 export BAT_PAGER=""
@@ -62,6 +64,34 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
+ssm() {
+  local instance_ids selection
+
+  instance_ids="$(
+    aws ssm describe-instance-information \
+      --filters \
+        "Key=PingStatus,Values=Online" \
+        "Key=ResourceType,Values=EC2Instance" \
+      --query "InstanceInformationList[].InstanceId" \
+      --output json
+  )" || return
+
+  selection="$(
+    aws ec2 describe-instances --output json |
+      jq -r --argjson instance_ids "${instance_ids}" '
+        .Reservations[].Instances[]
+        | select(.InstanceId as $id | $instance_ids | index($id))
+        | [([.Tags[]? | select(.Key == "Name") | .Value][0] // "(unnamed)"), .InstanceId]
+        | @tsv
+      ' |
+      fzf \
+        --header=$'NAME\tINSTANCE ID' \
+        --prompt="SSM instance> "
+  )" || return
+
+  aws ssm start-session --target "${selection##*$'\t'}"
+}
+
 alias cat="bat --plain"
 alias gaa="git add --all"
 alias gcmsg="git commit --message"
@@ -77,6 +107,4 @@ alias todo="rg \"TODO\" --colors match:fg:yellow --colors match:style:bold"
 alias vim="nvim"
 
 compdef kubecolor=kubectl
-
-eval "$(mise activate zsh)"
 eval "$(starship init zsh)"

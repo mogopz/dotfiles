@@ -19,6 +19,15 @@ $ mise bootstrap --yes --force-dotfiles --skip packages,tools,task
 $ mise bootstrap --yes
 ```
 
+## Update
+
+```bash
+$ mise install
+$ mise upgrade
+$ mise bootstrap packages upgrade --yes
+$ mise run bootstrap
+```
+
 ## Screenshot
 
 ![Terminal screenshot](img/terminal.png)

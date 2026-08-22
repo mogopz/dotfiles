@@ -1,2 +1,5 @@
 font-family = "JetBrains Mono"
 theme = "Catppuccin Mocha"
+
+# Send Ctrl+W when Option+Delete is pressed.
+keybind = alt+backspace=text:\x17

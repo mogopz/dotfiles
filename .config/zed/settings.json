@@ -6,24 +6,25 @@
   "agent_servers": {
     "codex-acp": {
       "default_config_options": {
+        "fast-mode": false,
         "mode": "agent",
       },
       "type": "registry",
     },
   },
   "project_panel": {
-    "dock": "left",
+    "dock": "right",
   },
   "outline_panel": {
-    "dock": "left",
+    "dock": "right",
   },
   "agent": {
     "show_turn_stats": true,
     "sidebar_side": "right",
-    "dock": "right",
+    "dock": "left",
   },
   "git_panel": {
-    "dock": "left",
+    "dock": "right",
   },
   "auto_install_extensions": {
     "catppuccin": true,
@@ -41,7 +42,7 @@
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 12.0,
   "collaboration_panel": {
-    "dock": "left",
+    "dock": "right",
     "button": false,
   },
   "cursor_blink": false,

@@ -1,19 +1,38 @@
+min_version = "2026.8.10"
+
 [settings]
-experimental = true
 color_theme = "catppuccin"
 dotfiles.root = "~/dotfiles"
 dotfiles.default_mode = "symlink"
+minimum_release_age = "3d"
 
 [tools]
+fzf = "latest"
+go = "latest"
+hadolint = "latest"
+helm = "latest"
+kind = "latest"
+kubectl = "latest"
+kustomize = "latest"
 node = "lts"
+shellcheck = "latest"
+sops = "latest"
 terraform = "latest"
+terraform-docs = "latest"
+terragrunt = "latest"
+tflint = "latest"
+trivy = "latest"
+uv = "latest"
 
-[bootstrap.brew.taps]
-"gjbae1212/gossm" = "https://github.com/gjbae1212/homebrew-gossm.git"
+[tools.codex]
+version = "latest"
+minimum_release_age = "0s"
+
+[bootstrap.brew]
+adopt = true
 
 [bootstrap.packages]
 "brew:age" = "latest"
-"brew:argocd" = "latest"
 "brew:awscli" = "latest"
 "brew:bat" = "latest"
 "brew:btop" = "latest"
@@ -27,22 +46,14 @@ terraform = "latest"
 "brew:git" = "latest"
 "brew:git-delta" = "latest"
 "brew:git-xargs" = "latest"
-"brew:gjbae1212/gossm/gossm" = "latest"
 "brew:gnupg" = "latest"
-"brew:go" = "latest"
 "brew:granted" = "latest"
-"brew:hadolint" = "latest"
-"brew:helm" = "latest"
 "brew:htop" = "latest"
 "brew:httpie" = "latest"
 "brew:jq" = "latest"
-"brew:kind" = "latest"
-"brew:kube-score" = "latest"
 "brew:kubecolor" = "latest"
 "brew:kubeconform" = "latest"
-"brew:kubernetes-cli" = "latest"
 "brew:kubectx" = "latest"
-"brew:kustomize" = "latest"
 "brew:lazydocker" = "latest"
 "brew:lazygit" = "latest"
 "brew:lsd" = "latest"
@@ -55,24 +66,37 @@ terraform = "latest"
 "brew:pnpm" = "latest"
 "brew:pre-commit" = "latest"
 "brew:ripgrep" = "latest"
-"brew:shellcheck" = "latest"
 "brew:skopeo" = "latest"
-"brew:sops" = "latest"
 "brew:starship" = "latest"
 "brew:staticcheck" = "latest"
 "brew:stern" = "latest"
-"brew:terraform-docs" = "latest"
-"brew:terragrunt" = "latest"
 "brew:tree" = "latest"
-"brew:trivy" = "latest"
-"brew:uv" = "latest"
 "brew:wget" = "latest"
 "brew:yamllint" = "latest"
 "brew:yarn" = "latest"
 "brew:yq" = "latest"
 "brew:zsh-autosuggestions" = "latest"
 "brew:zsh-syntax-highlighting" = "latest"
-"mas:937984704" = "latest"                     # Amphetamine
+"brew-cask:1password" = "latest"
+"brew-cask:1password-cli" = "latest"
+"brew-cask:appcleaner" = "latest"
+"brew-cask:firefox" = "latest"
+"brew-cask:font-jetbrains-mono" = "latest"
+"brew-cask:font-jetbrains-mono-nerd-font" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:gitify" = "latest"
+"brew-cask:helium-browser" = "latest"
+"brew-cask:insomnia" = "latest"
+"brew-cask:jordanbaird-ice" = "latest"
+"brew-cask:obsidian" = "latest"
+"brew-cask:orbstack" = "latest"
+"brew-cask:rectangle" = "latest"
+"brew-cask:signal" = "latest"
+"brew-cask:slack" = "latest"
+"brew-cask:tailscale-app" = "latest"
+"brew-cask:vlc" = "latest"
+"brew-cask:zed" = "latest"
+"mas:937984704" = "latest" # Amphetamine
 
 [bootstrap.repos]
 "~/dotfiles" = { url = "https://github.com/mogopz/dotfiles", ref = "main" }
@@ -90,6 +114,18 @@ preferred_view_style = "list"
 
 [bootstrap.macos.trackpad]
 tap_to_click = true
+
+[bootstrap.macos.defaults.NSGlobalDomain]
+AppleInterfaceStyle = "Dark"
+"com.apple.swipescrolldirection" = false
+
+[bootstrap.macos.defaults."com.apple.WindowManager"]
+EnableStandardClickToShowDesktop = false
+EnableTiledWindowMargins = false
+EnableTilingByEdgeDrag = false
+EnableTilingOptionAccelerator = false
+EnableTopTilingByEdgeDrag = false
+StandardHideWidgets = true
 
 [bootstrap.hooks.pre-repos]
 run = '''
@@ -112,65 +148,30 @@ fi
 '''
 
 [dotfiles]
+"~/.config/bat/themes/Catppuccin Mocha.tmTheme" = ".config/bat/themes/Catppuccin Mocha.tmTheme"
 "~/.config/ghostty" = ".config/ghostty"
 "~/.gitconfig" = ".config/git/config"
 "~/.gitignore" = ".config/git/ignore"
 "~/.config/lsd" = ".config/lsd"
+"~/.config/mise/config.toml" = "mise.toml"
 "~/.config/nvim/lua/plugins/theme.lua" = ".config/nvim/theme.lua"
 "~/.config/starship.toml" = ".config/starship/starship.toml"
 "~/.config/zed/settings.json" = ".config/zed/settings.json"
-"~/Library/Application Support/Rectangle" = ".config/rectangle"
+"~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh" = ".config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh"
 "~/.zshrc" = ".config/zsh/.zshrc"
 
-[tasks.bootstrap]
-description = "Install supplemental theme assets"
-run = '''
-set -euo pipefail
+[dotfiles."~/Library/Application Support/Rectangle/RectangleConfig.json"]
+source = ".config/rectangle/RectangleConfig.json"
+mode = "copy"
 
-bat_theme_dir="$(bat --config-dir)/themes"
-bat_theme_file="${bat_theme_dir}/Catppuccin Mocha.tmTheme"
-mkdir -p "${bat_theme_dir}"
-if [ ! -f "${bat_theme_file}" ]; then
-  curl -fsSL \
-    --output "${bat_theme_file}" \
-    "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme"
+[tasks.bootstrap]
+description = "Install the Homebrew-managed Raycast cask and build Bat's theme cache"
+run = '''
+# mise throws TLS errors installing Raycast v2
+if brew list --cask raycast >/dev/null 2>&1; then
+  brew upgrade --cask raycast
+else
+  brew install --cask raycast
 fi
 bat cache --build
-
-zsh_theme_file="${HOME}/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh"
-mkdir -p "${HOME}/.zsh"
-if [ ! -f "${zsh_theme_file}" ]; then
-  tmp_dir="$(mktemp -d)"
-  trap 'rm -rf "${tmp_dir}"' EXIT
-  git clone --depth 1 https://github.com/catppuccin/zsh-syntax-highlighting.git "${tmp_dir}/zsh-syntax-highlighting"
-  cp "${tmp_dir}/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh" "${zsh_theme_file}"
-fi
-
-# mise does not fully support casks yet.
-# https://mise.jdx.dev/bootstrap/packages/brew.html#casks
-brew install --cask \
-  1password \
-  1password-cli \
-  appcleaner \
-  codex \
-  discord \
-  firefox \
-  font-jetbrains-mono \
-  font-jetbrains-mono-nerd-font \
-  ghostty \
-  gitify \
-  google-chrome \
-  helium-browser \
-  insomnia \
-  jordanbaird-ice \
-  obsidian \
-  orbstack \
-  raycast \
-  rectangle \
-  signal \
-  slack \
-  tailscale-app \
-  terraform-linters/tap/tflint \
-  vlc \
-  zed
 '''
