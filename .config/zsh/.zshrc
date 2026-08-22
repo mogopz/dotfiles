@@ -66,9 +66,12 @@ source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
 ssm() {
   local instance_ids selection
+  local -a region
+
+  [[ -n "${1}" ]] && region=(--region "${1}")
 
   instance_ids="$(
-    aws ssm describe-instance-information \
+    aws "${region[@]}" ssm describe-instance-information \
       --filters \
         "Key=PingStatus,Values=Online" \
         "Key=ResourceType,Values=EC2Instance" \
@@ -77,7 +80,7 @@ ssm() {
   )" || return
 
   selection="$(
-    aws ec2 describe-instances --output json |
+    aws "${region[@]}" ec2 describe-instances --output json |
       jq -r --argjson instance_ids "${instance_ids}" '
         .Reservations[].Instances[]
         | select(.InstanceId as $id | $instance_ids | index($id))
@@ -89,7 +92,7 @@ ssm() {
         --prompt="SSM instance> "
   )" || return
 
-  aws ssm start-session --target "${selection##*$'\t'}"
+  aws "${region[@]}" ssm start-session --target "${selection##*$'\t'}"
 }
 
 alias cat="bat --plain"
