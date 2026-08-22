@@ -15,8 +15,7 @@ $ brew install mise
 $ git clone --branch main https://github.com/mogopz/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 $ mise trust
-$ mise bootstrap --yes --force-dotfiles --skip packages,tools,task
-$ mise bootstrap --yes
+$ mise bootstrap --yes --force-dotfiles
 ```
 
 ## Update
