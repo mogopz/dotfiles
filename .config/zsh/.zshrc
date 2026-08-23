@@ -48,6 +48,7 @@ export BAT_THEME="Catppuccin Mocha"
 export EDITOR="nvim"
 export KUBE_EDITOR="nvim"
 export GOSS_PATH="/usr/local/bin/goss"
+typeset -U PATH path
 export PATH="${PATH}:$(go env GOPATH)/bin"
 export KUBECTL_EXTERNAL_DIFF="delta --paging never"
 
