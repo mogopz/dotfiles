@@ -10,6 +10,16 @@ node = "lts"
 terraform = "latest"
 uv = "latest"
 
+[bootstrap.files."/etc/pam.d/sudo_local"]
+content = """
+# sudo_local: local config file which survives system update and is included for sudo
+# uncomment following line to enable Touch ID for sudo
+auth       sufficient     pam_tid.so
+"""
+owner = "root"
+group = "wheel"
+mode = "0444"
+
 [bootstrap.repos]
 "~/.config/nvim" = { url = "https://github.com/LazyVim/starter", ref = "main" }
 

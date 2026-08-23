@@ -1,5 +1,6 @@
 font-family = "JetBrains Mono"
 theme = "Catppuccin Mocha"
+shell-integration-features = ssh-env,ssh-terminfo
 
 # Send Ctrl+W when Option+Delete is pressed.
 keybind = alt+backspace=text:\x17
