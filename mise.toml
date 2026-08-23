@@ -103,7 +103,9 @@ dir = "~/dotfiles"
 run = '''
 set -eu
 
-brew bundle install --upgrade
+brew update
+brew upgrade
+brew upgrade --cask
 mise upgrade
 bat cache --build
 '''
