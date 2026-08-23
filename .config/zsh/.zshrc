@@ -108,6 +108,7 @@ ssm() {
 }
 
 alias cat="bat --plain"
+alias codexq="codex --profile quick"
 alias gaa="git add --all"
 alias gcmsg="git commit --message"
 alias ggp="git push"

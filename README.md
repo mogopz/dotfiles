@@ -26,7 +26,7 @@ $ mise run update
 
 ## Wallpapers
 
-Wallpapers are distributed as a GitHub Release to keep repository checkouts small. Copy to `~/Pictures/Wallpapers` with:
+Wallpapers are bundled as a GitHub Release to keep repository checkouts small.
 
 ```bash
 $ mise run wallpapers
