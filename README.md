@@ -34,4 +34,4 @@ $ mise run wallpapers
 
 ## Screenshot
 
-![Terminal screenshot](img/terminal.png)
+![Terminal screenshot](assets/terminal.png)
