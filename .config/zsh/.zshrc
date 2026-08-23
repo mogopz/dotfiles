@@ -1,5 +1,13 @@
+typeset -U PATH path FPATH fpath
+
 autoload -Uz compinit
+zmodload zsh/complist
 compinit
+
+setopt always_to_end
+setopt complete_in_word
+setopt interactive_comments
+unsetopt flow_control
 
 # Keep ZLE in Emacs mode even though EDITOR is nvim.
 bindkey -e
@@ -19,10 +27,11 @@ select-word-style bash
 
 # History configuration
 HISTFILE=~/.zsh_history
-HISTSIZE=100000
+HISTSIZE=120000
 SAVEHIST=100000
 setopt extended_history
 setopt hist_expire_dups_first
+setopt hist_find_no_dups
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_verify
@@ -36,8 +45,11 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
-# Case-insensitive completion
+# Completion configuration
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
 
 eval "$(mise activate zsh)"
 
@@ -46,9 +58,8 @@ export ARGOCD_OPTS="--grpc-web"
 export BAT_PAGER=""
 export BAT_THEME="Catppuccin Mocha"
 export EDITOR="nvim"
-export KUBE_EDITOR="nvim"
-export GOSS_PATH="/usr/local/bin/goss"
-typeset -U PATH path
+export VISUAL="${EDITOR}"
+export KUBE_EDITOR="${EDITOR}"
 export PATH="${PATH}:$(go env GOPATH)/bin"
 export KUBECTL_EXTERNAL_DIFF="delta --paging never"
 
@@ -61,6 +72,7 @@ export LESS_TERMCAP_so=$'\E[38;33;246m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
+source <(fzf --zsh)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
