@@ -73,6 +73,7 @@ fi
 "~/.config/ghostty" = ".config/ghostty"
 "~/.config/git/ignore" = ".config/git/ignore"
 "~/.gitconfig" = ".config/git/config"
+"~/.config/herdr/config.toml" = ".config/herdr/config.toml"
 "~/.config/lsd" = ".config/lsd"
 "~/.config/mise/config.toml" = "mise.toml"
 "~/.config/nvim/lua/plugins/theme.lua" = ".config/nvim/theme.lua"
