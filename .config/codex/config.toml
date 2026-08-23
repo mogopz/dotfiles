@@ -1,0 +1,35 @@
+# Portable Codex baseline for reference and manual merging.
+
+model = "gpt-5.6-sol"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+approvals_reviewer = "user"
+service_tier = "default"
+plan_mode_reasoning_effort = "xhigh"
+cli_auth_credentials_store = "keyring"
+mcp_oauth_credentials_store = "keyring"
+
+[features]
+hooks = true
+multi_agent = true
+memories = true
+
+[memories]
+generate_memories = true
+use_memories = true
+
+[feedback]
+enabled = false
+
+[analytics]
+enabled = false
+
+[tui]
+theme = "catppuccin-mocha"
+status_line = ["model-with-reasoning", "git-branch", "context-remaining", "five-hour-limit", "weekly-limit"]
+status_line_use_colors = true
+terminal_title = ["spinner", "project", "git-branch"]
+pet = "seedy"
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp/oauth"

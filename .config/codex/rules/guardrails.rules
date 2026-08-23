@@ -1,0 +1,240 @@
+prefix_rule(
+    pattern = ["gh", "auth", "status", ["--show-token", "-t"]],
+    decision = "forbidden",
+    justification = "Never print a stored GitHub token.",
+    match = ["gh auth status --show-token", "gh auth status -t"],
+    not_match = ["gh auth status", "gh auth status --hostname github.com"],
+)
+
+prefix_rule(
+    pattern = ["gh", "auth", "status"],
+    decision = "prompt",
+    justification = "Review authentication-status flags before allowing Keychain access.",
+    match = ["gh auth status", "gh auth status --hostname github.com"],
+    not_match = ["gh auth token", "gh auth login"],
+)
+
+prefix_rule(
+    pattern = ["gh", "status"],
+    decision = "allow",
+    justification = "Display read-only GitHub activity status.",
+    match = ["gh status", "gh status --org openai"],
+)
+
+prefix_rule(
+    pattern = ["gh", "cache", "list"],
+    decision = "allow",
+    justification = "List GitHub Actions caches without modifying them.",
+    match = ["gh cache list", "gh cache list --repo openai/codex"],
+    not_match = ["gh cache delete --all"],
+)
+
+prefix_rule(
+    pattern = ["gh", "gist", ["list", "view"]],
+    decision = "allow",
+    justification = "List or view gists without modifying them.",
+    match = ["gh gist list", "gh gist view abc123"],
+    not_match = ["gh gist create file.txt", "gh gist delete abc123"],
+)
+
+prefix_rule(
+    pattern = ["gh", "issue", ["list", "status", "view"]],
+    decision = "allow",
+    justification = "Inspect GitHub issues without modifying them.",
+    match = ["gh issue list", "gh issue status", "gh issue view 123 --comments"],
+    not_match = ["gh issue create", "gh issue comment 123"],
+)
+
+prefix_rule(
+    pattern = ["gh", "label", "list"],
+    decision = "allow",
+    justification = "List repository labels without modifying them.",
+    match = ["gh label list", "gh label list --repo openai/codex"],
+    not_match = ["gh label create bug"],
+)
+
+prefix_rule(
+    pattern = ["gh", "org", "list"],
+    decision = "allow",
+    justification = "List organizations without modifying them.",
+    match = ["gh org list"],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", ["checks", "diff", "list", "status", "view"]],
+    decision = "allow",
+    justification = "Inspect pull requests and their checks without modifying them.",
+    match = [
+        "gh pr checks 123",
+        "gh pr diff 123",
+        "gh pr list",
+        "gh pr status",
+        "gh pr view 123 --comments",
+    ],
+    not_match = ["gh pr create", "gh pr comment 123", "gh pr merge 123"],
+)
+
+prefix_rule(
+    pattern = ["gh", "release", ["list", "view"]],
+    decision = "allow",
+    justification = "List or view releases without modifying them or downloading assets.",
+    match = ["gh release list", "gh release view v1.0.0"],
+    not_match = ["gh release create v1.0.0", "gh release download v1.0.0"],
+)
+
+prefix_rule(
+    pattern = ["gh", "repo", ["list", "read-dir", "read-file", "view"]],
+    decision = "allow",
+    justification = "Inspect repositories and their files without modifying local or remote state.",
+    match = [
+        "gh repo list openai",
+        "gh repo read-dir --repo openai/codex",
+        "gh repo read-file README.md --repo openai/codex",
+        "gh repo view openai/codex",
+    ],
+    not_match = ["gh repo create example", "gh repo delete openai/codex"],
+)
+
+prefix_rule(
+    pattern = ["gh", "repo", ["gitignore", "license"]],
+    decision = "allow",
+    justification = "Inspect GitHub's gitignore templates and licenses.",
+    match = ["gh repo gitignore list", "gh repo license view mit"],
+)
+
+prefix_rule(
+    pattern = ["gh", "ruleset", ["check", "list", "view"]],
+    decision = "allow",
+    justification = "Inspect repository rulesets without modifying them.",
+    match = ["gh ruleset check main", "gh ruleset list", "gh ruleset view 123"],
+)
+
+prefix_rule(
+    pattern = ["gh", "run", ["list", "view", "watch"]],
+    decision = "allow",
+    justification = "Inspect or watch workflow runs without modifying them or downloading artifacts.",
+    match = ["gh run list", "gh run view 123", "gh run watch 123"],
+    not_match = ["gh run cancel 123", "gh run rerun 123", "gh run download 123"],
+)
+
+prefix_rule(
+    pattern = ["gh", "search", ["code", "commits", "issues", "prs", "repos"]],
+    decision = "allow",
+    justification = "Search GitHub without modifying remote state.",
+    match = ["gh search code context7", "gh search issues label:bug", "gh search repos codex"],
+)
+
+prefix_rule(
+    pattern = ["gh", "workflow", ["list", "view"]],
+    decision = "allow",
+    justification = "List or view workflows without enabling, disabling, or running them.",
+    match = ["gh workflow list", "gh workflow view ci.yml"],
+    not_match = ["gh workflow run ci.yml", "gh workflow disable ci.yml"],
+)
+
+prefix_rule(
+    pattern = ["gh", ["alias", "extension"], "list"],
+    decision = "allow",
+    justification = "List local GitHub CLI aliases or extensions without modifying them.",
+    match = ["gh alias list", "gh extension list"],
+)
+
+prefix_rule(
+    pattern = ["gh", "config", ["get", "list"]],
+    decision = "allow",
+    justification = "Read GitHub CLI configuration without modifying it.",
+    match = ["gh config get git_protocol", "gh config list"],
+    not_match = ["gh config set git_protocol ssh"],
+)
+
+# High-risk commands require review or are rejected before execution.
+prefix_rule(
+    pattern = ["rm", ["-rf", "-fr", "-Rf", "-rF"]],
+    decision = "forbidden",
+    justification = "Use `trash` instead of recursive force deletion.",
+    match = ["rm -rf build", "rm -fr tmp"],
+)
+
+prefix_rule(
+    pattern = ["sudo"],
+    decision = "prompt",
+    justification = "sudo requires explicit human review.",
+    match = ["sudo make install"],
+)
+
+prefix_rule(
+    pattern = ["mkfs"],
+    decision = "forbidden",
+    justification = "Filesystem formatting commands are not allowed from Codex.",
+    match = ["mkfs /dev/disk1"],
+)
+
+prefix_rule(
+    pattern = ["dd"],
+    decision = "forbidden",
+    justification = "Raw disk write commands are not allowed from Codex.",
+    match = ["dd if=image.iso of=/dev/disk1"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", ["--force", "-f"]],
+    decision = "forbidden",
+    justification = "Do not force-push from Codex.",
+    match = ["git push --force origin feature", "git push -f origin feature"],
+)
+
+prefix_rule(
+    pattern = ["git", "reset", "--hard"],
+    decision = "forbidden",
+    justification = "Do not discard work with git reset --hard from Codex.",
+    match = ["git reset --hard HEAD"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "origin", ["main", "master"]],
+    decision = "forbidden",
+    justification = "Use feature branches and PRs; do not push directly to main/master.",
+    match = ["git push origin main", "git push origin master"],
+)
+
+prefix_rule(
+    pattern = ["git", ["clean", "restore"]],
+    decision = "prompt",
+    justification = "Review potentially destructive working-tree changes before proceeding.",
+    match = ["git clean -fd", "git restore ."],
+)
+
+prefix_rule(
+    pattern = ["git", "checkout", "--"],
+    decision = "prompt",
+    justification = "Review before discarding working-tree changes with git checkout.",
+    match = ["git checkout -- README.md"],
+)
+
+prefix_rule(
+    pattern = ["gh", "api"],
+    decision = "prompt",
+    justification = "Raw API calls can mutate GitHub state; review the method and fields each time.",
+    match = ["gh api repos/openai/codex", "gh api -X DELETE repos/owner/repo"],
+)
+
+prefix_rule(
+    pattern = ["gh", "auth", "token"],
+    decision = "forbidden",
+    justification = "Use `gh auth status`; never print the stored GitHub token.",
+    match = ["gh auth token"],
+)
+
+prefix_rule(
+    pattern = ["gh", ["cache", "gist", "issue", "repo", "run"], "delete"],
+    decision = "forbidden",
+    justification = "Delete GitHub resources manually after reviewing the exact target.",
+    match = ["gh cache delete --all", "gh gist delete abc123", "gh repo delete owner/repo"],
+)
+
+prefix_rule(
+    pattern = ["gh", "release", ["delete", "delete-asset"]],
+    decision = "forbidden",
+    justification = "Delete releases or release assets manually after reviewing the exact target.",
+    match = ["gh release delete v1.0.0", "gh release delete-asset v1.0.0 app.tar.gz"],
+)

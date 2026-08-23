@@ -69,6 +69,11 @@ fi
 '''
 
 [dotfiles]
+# .config/codex/config.toml is a reference baseline only
+"~/.codex/hooks/block-dangerous-command.sh" = ".config/codex/hooks/block-dangerous-command.sh"
+"~/.codex/hooks.json" = { source = ".config/codex/hooks.json", mode = "copy" }
+"~/.codex/quick.config.toml" = ".config/codex/quick.config.toml"
+"~/.codex/rules/guardrails.rules" = ".config/codex/rules/guardrails.rules"
 "~/.config/bat/themes/Catppuccin Mocha.tmTheme" = ".config/bat/themes/Catppuccin Mocha.tmTheme"
 "~/.config/ghostty" = ".config/ghostty"
 "~/.config/git/ignore" = ".config/git/ignore"
@@ -85,18 +90,6 @@ fi
 [dotfiles."~/Library/Application Support/Rectangle/RectangleConfig.json"]
 source = ".config/rectangle/RectangleConfig.json"
 mode = "copy"
-
-[tasks.check]
-description = "Validate dotfiles"
-dir = "~/dotfiles"
-run = '''
-set -eu
-
-mise fmt --check
-zsh -n .config/zsh/.zshrc
-git diff --check
-jq empty .config/rectangle/RectangleConfig.json
-'''
 
 [tasks.bootstrap]
 description = "Install Homebrew packages and build Bat's theme cache"

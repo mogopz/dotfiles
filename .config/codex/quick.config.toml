@@ -1,0 +1,3 @@
+# Faster profile for routine edits, lookups, and small scripts.
+model = "gpt-5.6-terra"
+model_reasoning_effort = "high"
