@@ -75,6 +75,18 @@ fi
 source = ".config/rectangle/RectangleConfig.json"
 mode = "copy"
 
+[tasks.check]
+description = "Validate dotfiles"
+dir = "~/dotfiles"
+run = '''
+set -eu
+
+mise fmt --check
+zsh -n .config/zsh/.zshrc
+git diff --check
+jq empty .config/rectangle/RectangleConfig.json
+'''
+
 [tasks.bootstrap]
 description = "Install Homebrew packages and build Bat's theme cache"
 dir = "~/dotfiles"
