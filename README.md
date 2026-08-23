@@ -24,6 +24,14 @@ $ mise bootstrap --yes --force-dotfiles
 $ mise run update
 ```
 
+## Wallpapers
+
+Wallpapers are distributed as a GitHub Release to keep repository checkouts small. Copy to `~/Pictures/Wallpapers` with:
+
+```bash
+$ mise run wallpapers
+```
+
 ## Screenshot
 
 ![Terminal screenshot](img/terminal.png)

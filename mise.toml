@@ -120,3 +120,40 @@ brew upgrade --cask
 mise upgrade
 bat cache --build
 '''
+
+[tasks.wallpapers]
+description = "Install wallpapers"
+dir = "~/dotfiles"
+run = '''
+set -eu
+
+version="wallpapers-v1"
+archive="${version}.tar.gz"
+archive_sha256="e63ec226d52eb61af90fe37b45ee4109715a461bfd55b86103cedaa7f3af6a8b"
+destination="${HOME}/Pictures/Wallpapers"
+manifest="${PWD}/assets/${version}.sha256"
+release_url="https://github.com/mogopz/dotfiles/releases/download"
+
+if [ -d "${destination}" ] && (
+  cd "${destination}"
+  shasum -a 256 --check "${manifest}" >/dev/null 2>&1
+); then
+  echo "Wallpapers are already installed in ${destination}"
+  exit 0
+fi
+
+tmp_dir="$(mktemp -d)"
+trap 'rm -f "${tmp_dir}/${archive}"; rmdir "${tmp_dir}"' EXIT
+
+curl --fail --location --retry 3 --show-error --silent \
+  --output "${tmp_dir}/${archive}" \
+  "${release_url}/${version}/${archive}"
+printf '%s  %s\n' "${archive_sha256}" "${tmp_dir}/${archive}" | shasum -a 256 --check
+
+mkdir -p "${destination}"
+tar -xzf "${tmp_dir}/${archive}" -C "${destination}"
+(
+  cd "${destination}"
+  shasum -a 256 --check "${manifest}"
+)
+'''

@@ -2,3 +2,4 @@
 .mise.local.toml
 mise.local.toml
 RectangleConfig[0-9][0-9][0-9][0-9]-*.json
+/wallpapers/
