@@ -62,7 +62,6 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
 ssm() {
@@ -112,3 +111,4 @@ alias vim="nvim"
 
 compdef kubecolor=kubectl
 eval "$(starship init zsh)"
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
