@@ -1,5 +1,8 @@
 onboarding = false
 
+[theme]
+name = "catppuccin"
+
 [ui.sound]
 enabled = false
 
