@@ -21,10 +21,7 @@ $ mise bootstrap --yes --force-dotfiles
 ## Update
 
 ```bash
-$ mise install
-$ mise upgrade
-$ mise bootstrap packages upgrade --yes
-$ mise run bootstrap
+$ mise run update
 ```
 
 ## Screenshot
