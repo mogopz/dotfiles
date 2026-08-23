@@ -70,6 +70,7 @@ fi
 
 [dotfiles]
 # .config/codex/config.toml is a reference baseline only
+"~/.codex/AGENTS.md" = ".config/codex/AGENTS.md"
 "~/.codex/hooks/block-dangerous-command.sh" = ".config/codex/hooks/block-dangerous-command.sh"
 "~/.codex/hooks.json" = { source = ".config/codex/hooks.json", mode = "copy" }
 "~/.codex/quick.config.toml" = ".config/codex/quick.config.toml"
