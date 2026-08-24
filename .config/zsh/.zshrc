@@ -100,13 +100,31 @@ ssm() {
   selection="$(
     aws "${region[@]}" ec2 describe-instances --output json |
       jq -r --argjson instance_ids "${instance_ids}" '
-        .Reservations[].Instances[]
-        | select(.InstanceId as $id | $instance_ids | index($id))
-        | [([.Tags[]? | select(.Key == "Name") | .Value][0] // "(unnamed)"), .InstanceId]
-        | @tsv
+        [
+          .Reservations[].Instances[]
+          | select(.InstanceId as $id | $instance_ids | index($id))
+          | {
+              name: ([.Tags[]? | select(.Key == "Name") | .Value][0] // "(unnamed)"),
+              id: .InstanceId
+            }
+        ]
+        | sort_by(.name)
+        | (map(.name | length) | max // 4) as $widest_name
+        | ($widest_name | if . < 4 then 4 else . end) as $name_width
+        | ("NAME" + (" " * ($name_width - 4 + 2)) + "INSTANCE ID") as $header
+        | ([$header, ""] | @tsv),
+          (.[] | [
+            (.name + (" " * ($name_width - (.name | length) + 2)) + .id),
+            .id
+          ] | @tsv)
       ' |
       fzf \
-        --header=$'NAME\tINSTANCE ID' \
+        --layout=reverse \
+        --height='~50%' \
+        --border=rounded \
+        --header-lines=1 \
+        --delimiter=$'\t' \
+        --with-nth=1 \
         --prompt="SSM instance> "
   )" || return
 
