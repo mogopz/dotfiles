@@ -82,69 +82,8 @@ source <(fzf --zsh)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
-ssm() {
-  local instance_ids selection
-  local -a region
-
-  [[ -n "${1}" ]] && region=(--region "${1}")
-
-  instance_ids="$(
-    aws "${region[@]}" ssm describe-instance-information \
-      --filters \
-        "Key=PingStatus,Values=Online" \
-        "Key=ResourceType,Values=EC2Instance" \
-      --query "InstanceInformationList[].InstanceId" \
-      --output json
-  )" || return
-
-  selection="$(
-    aws "${region[@]}" ec2 describe-instances --output json |
-      jq -r --argjson instance_ids "${instance_ids}" '
-        [
-          .Reservations[].Instances[]
-          | select(.InstanceId as $id | $instance_ids | index($id))
-          | {
-              name: ([.Tags[]? | select(.Key == "Name") | .Value][0] // "(unnamed)"),
-              id: .InstanceId
-            }
-        ]
-        | sort_by(.name)
-        | (map(.name | length) | max // 4) as $widest_name
-        | ($widest_name | if . < 4 then 4 else . end) as $name_width
-        | ("NAME" + (" " * ($name_width - 4 + 2)) + "INSTANCE ID") as $header
-        | ([$header, ""] | @tsv),
-          (.[] | [
-            (.name + (" " * ($name_width - (.name | length) + 2)) + .id),
-            .id
-          ] | @tsv)
-      ' |
-      fzf \
-        --layout=reverse \
-        --height='~50%' \
-        --border=rounded \
-        --header-lines=1 \
-        --delimiter=$'\t' \
-        --with-nth=1 \
-        --prompt="SSM instance> "
-  )" || return
-
-  aws "${region[@]}" ssm start-session --target "${selection##*$'\t'}"
-}
-
-alias cat="bat --plain"
-alias codexq="codex --profile quick"
-alias gaa="git add --all"
-alias gcmsg="git commit --message"
-alias ggp="git push"
-alias glods='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset" --date=short'
-alias k="kubecolor"
-alias kctx="kubectx"
-alias kns="kubens"
-alias ll="ls -lah"
-alias ls="lsd"
-alias ofd="open ."
-alias todo="rg \"TODO\" --colors match:fg:yellow --colors match:style:bold"
-alias vim="nvim"
+source "${HOME}/.zsh/functions.zsh"
+source "${HOME}/.zsh/aliases.zsh"
 
 compdef kubecolor=kubectl
 eval "$(starship init zsh)"

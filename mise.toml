@@ -85,7 +85,9 @@ fi
 "~/.config/nvim/lua/plugins/theme.lua" = ".config/nvim/theme.lua"
 "~/.config/starship.toml" = ".config/starship/starship.toml"
 "~/.config/zed/settings.json" = ".config/zed/settings.json"
+"~/.zsh/aliases.zsh" = ".config/zsh/aliases.zsh"
 "~/.zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh" = ".config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh"
+"~/.zsh/functions.zsh" = ".config/zsh/functions.zsh"
 "~/.zshrc" = ".config/zsh/.zshrc"
 
 [dotfiles."~/Library/Application Support/Rectangle/RectangleConfig.json"]
